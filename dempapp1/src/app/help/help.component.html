@@ -1,0 +1,32 @@
+<p>help works!</p>
+
+<hr>
+<p *ngIf="status!=='OFF'"> Server is UP. </p>   
+<p *ngIf="status==='OFF'"> Server is DOWN. </p> 
+
+<hr>
+<div [ngSwitch]="status">      
+    <p style='color:blue'  *ngSwitchCase="'ON'">Server Online</p>    
+    <p style='color:red'   *ngSwitchCase="'OFF'">Server Offline</p>   
+    <p style='color:green'  *ngSwitchDefault>Sorry! Invalid selection....</p>      
+</div>`
+
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th >Book id</th> 
+            <th >Name of the book</th>
+            <th >Author Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.bookId}}</td>
+            <td>{{book.bookName}}</td>
+            <td>{{book.authorName}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p appHighlight>Highlight me!</p>

@@ -1,0 +1,14 @@
+<p>view works!</p>
+<hr>
+<button (click)="click2()">Click me</button>
+<br>
+{{status}}
+
+<table *ngIf="users" align='center'border='1'>
+    <tr *ngFor="let user of users">
+     <td> <img [src]="user.avatar"> </td>
+      <td>{{ user.first_name }} {{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </table>
+

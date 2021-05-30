@@ -1,0 +1,137 @@
+<!-- <p>createuser works!</p>
+<form (ngSubmit)="saveuser()">
+    <div class="form-group">
+        <label for="userId">user id</label>
+        <input type="text" class="form-control" id="userid" required [(ngModel)]="user.userId" name="userid">
+    </div>
+
+    <div class="form-group">
+        <label for="userName">User Name</label>
+        <input type="text" class="form-control" id="uname" required [(ngModel)]="user.userName" name="uname">
+    </div>
+    <div class="form-group">
+        <label for="role">role</label>
+        <input type="text" class="form-control" id="role" required [(ngModel)]="user.role" name="role">
+    </div>
+    <div class="form-group">
+    <label for="email">email</label>
+    <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+    <div class="form-group">
+    <label for="password">password</label>
+    <input type="text" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+    </div>
+    <div class="form-group">
+    <label for="mobile">mobile</label>
+    <input type="text" class="form-control" id="mobile" required [(ngModel)]="user.mobile" name="mobile">
+    </div>
+    <div class="form-group">
+    <label for="address">address</label>
+    <input type="text" class="form-control" id="address" required [(ngModel)]="user.address" name="address">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+ -->
+ <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <title>Bootstrap Sign up Form with Icons</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="createuser.component.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+ </head>
+ <body>
+<div class="signup-form">
+    <form (ngSubmit)="saveuser()">
+        <h2>Sign Up</h2>
+        <p>Please fill in this form to create an account!</p>
+        <hr>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fa fa-user"></span>
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="user.userName" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-paper-plane"></i>
+                    </span>
+                </div>
+                <input type="email" class="form-control" name="email" placeholder="Email Address" [(ngModel)]="user.email" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="password" placeholder="Password" [(ngModel)]="user.password" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-lock"></i>
+                        <i class="fa fa-check"></i>
+                    </span>
+                </div>
+                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+                    required="required">
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </div>
+                <input type="text" value="Customer" class="form-control" name="role" [(ngModel)]="user.role" required="required" disabled>
+            </div>
+        </div> -->
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-mobile-alt"></i>
+                    
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="mobile" [(ngModel)]="user.mobile" placeholder="Mobile Number"
+                    required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-address-book" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="address" placeholder="Address" [(ngModel)]="user.address" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms
+                    of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a href="#">Login here</a></div>
+</div>
+
+
+</body>
+
+

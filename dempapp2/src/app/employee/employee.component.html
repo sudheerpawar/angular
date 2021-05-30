@@ -1,0 +1,30 @@
+
+<div class="container">
+    <table class="table table-bordered table-striped table-hover sortable">
+        <thead class="thead-dark">
+            <tr >
+                <th *ngFor= "let col of columns" >  
+                    <a class="link" (click)="sortColumn=col" >{{col}}</a>
+                </th>
+            </tr>
+            <!-- <tr>
+                <th scope="col" >{{EmpId}}</th>
+                <th scope="col">Emp name</th>
+                <th scope="col">Emp Salary</th>
+                <th scope="col">Emp department</th>
+                <th scope="col">Emp joining date</th>
+            </tr>  -->
+        </thead>
+        <tbody>
+            <tr class="item" *ngFor="let e of employee | sort:sortColumn">
+                <td scope="row">{{e.empId}}</td>
+                <td scope="row">{{e.empName}}</td>
+                <td scope="row">{{e.empSal}}</td>
+                <td scope="row">{{e.empDep}}</td>
+                <td scope="row">{{e.empjoiningdate}}</td>
+        </tbody>
+
+    </table>
+
+
+

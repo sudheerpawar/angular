@@ -1,0 +1,86 @@
+<p>Employee Works!</p>
+<h2>Add Employee</h2>
+<table style="text-align: left;">
+    <tr>
+        <th>ID</th>
+        <td>
+            <input type="text" [(ngModel)]="empId"/>
+        </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>
+            <input type="text" [(ngModel)]="empName"/>
+        </td>
+    </tr>
+    <tr>
+        <th>Salary</th>
+        <td>
+            <input type="text" [(ngModel)]="empSal"/>
+        </td>
+    </tr>
+    <tr>
+        <th>Department</th>
+        <td>
+            <input type="text" [(ngModel)]="empDep"/>
+        </td>
+    </tr>
+    <button (click)="addEmp()">Add Employee</button>
+</table>
+
+
+<h2>Show All Employee</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th colspan="2">Salary</th>
+        </tr>
+        <tr *ngFor="let employee of emp; let i=index">
+            <td>{{employee.empId}}</td>
+            <td>{{employee.empName}}</td>
+            <td>{{employee.empSal}}</td>
+            <td>{{employee.empDep}}</td>
+            <td><button (click)="onUpdate(i) " id ="update{{i+1}}">UPDATE</button></td>
+            <td><button (click)="onRemove(i)" id ="remove{{i+1}}">DELETE</button></td>
+        </tr>
+        
+    </thead>
+</table>
+<div id="did" style= display: {{display}}; >
+    <h2>Update Employee</h2>
+<table style="text-align: left;">
+    <tr>
+        <th>ID</th>
+        <td>
+            <input type="text" [(ngModel)]="uEmpId" disabled/>
+        </td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>
+            <input type="text" [(ngModel)]="uEmpName"/>
+        </td>
+    </tr>
+    <tr>
+        <th>Salary</th>
+        <td>
+            <input type="text" [(ngModel)]="uEmpSal"/>
+        </td>
+    </tr>
+    <tr>
+        <th>Department</th>
+        <td>
+            <input type="text" [(ngModel)]="uEmpDep"/>
+        </td>
+    </tr>
+    <button (click)="updateEmp()">Update Employee</button>
+</table>
+</div>
+
+
+<hr>
+<hr>

@@ -1,0 +1,38 @@
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Add User</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="empname">Emp Name:</label>
+            <input formControlName="empname" placeholder="empname" name="empname" class="form-control" id="empname">
+         <div *ngIf=" Submitted && addForm.controls.empname.errors">Give Name</div> </div>
+         
+         <div class="form-group">
+            <label for="email">Emp EmailId:</label>
+            <input type="text" formControlName="email" class="form-control" placeholder="Enter email" />
+            <div *ngIf="Submitted && addForm.controls.email.invalid" class="text-danger">
+              <small *ngIf="addForm.controls.email.errors?.required">Email address is required.</small>
+              <small *ngIf="addForm.controls.email.errors?.email">Email must be a valid email address.</small>
+            </div>
+          </div>
+        <div class="form-group">
+            <label for="designation">Designation:</label>
+            <input formControlName="designation" placeholder="designation" name="designation" class="form-control" id="designation">
+          <div *ngIf=" Submitted && addForm.controls.designation.errors">Give designation</div>
+          </div>
+        <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input formControlName="salary" placeholder="salary" name="salary" class="form-control" id="salary">
+         <div *ngIf=" Submitted && addForm.controls.salary.errors">Give salary</div>
+          </div>
+      
+          <div class="form-group">
+            <label for="experience">Experience:</label>
+            <input formControlName="experience" placeholder="experience" name="experience" class="form-control" id="experience">
+          <div *ngIf=" Submitted && addForm.controls.experience.errors">Give experience</div>
+          </div>
+      
+  
+ 
+      <button class="btn btn-success">Add Data</button>
+    </form>
+  </div>

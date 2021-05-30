@@ -1,0 +1,64 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Add Movie</h2>
+  <form (ngSubmit)="savemovie() " [formGroup]="addForm">
+
+      <div class="form-group">
+          <label for="id">Movie Id:</label>
+          <input formControlName="id" name="id" class="form-control" required [(ngModel)]="movie.id" id="id">
+       <div *ngIf=" Submitted && addForm.controls.id.errors">Give id</div> </div>
+          
+       <div class="form-group">
+          <label for="name">Movie Name:</label>
+          <input formControlName="name" name="name" class="form-control"  required [(ngModel)]="movie.name" id="name">
+       <div *ngIf=" Submitted && addForm.controls.name.errors">Give name</div>
+        </div>
+        <div class="form-group">
+          <label for="rating">Movie rating:</label>
+          <input formControlName="rating" name="rating" required [(ngModel)]="movie.rating" class="form-control" id="rating">
+       <div *ngIf=" Submitted && addForm.controls.rating.errors">Give rating</div>
+        </div>
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <select  formControlName="category" class="form-control"  id="category" name="category" required [(ngModel)]="movie.category" >
+              <option *ngFor="let cat of categ" [value]="cat">{{cat}}</option>
+            </select>
+          <div *ngIf=" Submitted && addForm.controls.category.errors">select one</div> 
+      </div>
+      <button class="btn btn-success">Add movie</button>
+  
+
+      <h3 align='center'>Movie Details</h3>
+<div class="container">    
+ 
+  <form (ngSubmit)="getallmovie()">
+    <div class="form-group">
+    <label for="category">category:</label>
+    <select name ="category"    id="category" [(ngModel)]="type1">
+      <option *ngFor="let cat of categ" [value]="cat" >{{cat}}</option>
+    </select>
+      </div>
+    <div class="form-group">
+      <button class="btn btn-success">Search</button>
+  
+   </div> 
+   </form>
+   
+  <table class="table table-bordered table-striped table-hover sortable" >
+    <tr>
+      <th> ID</th>
+      <th> Name</th>
+      <th>category</th>
+      <th>rating</th>
+    </tr>
+    <tr *ngFor="let m of movies">
+      <td>{{m.id}}</td>
+      <td>{{m.name}}</td>
+      <td>{{m.category}}</td>
+      <td>{{m.rating}}</td>
+    </tr>
+  </table>
+  
+  
+  
+ 
+</div>

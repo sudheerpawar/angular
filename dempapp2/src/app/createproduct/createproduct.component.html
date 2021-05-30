@@ -1,0 +1,16 @@
+<p>createproduct works!</p>
+<form (ngSubmit)="saveproduct()">
+    <div class="form-group">
+      <label for="pid">Pid</label>
+      <input type="text" class="form-control" id="pid" required [(ngModel)]="product.pid" name="pid">
+    </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="pname" required [(ngModel)]="product.pname" name="pname">
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
+      </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>

@@ -1,0 +1,44 @@
+
+<div class="container">
+<table  class="table table-bordered table-striped table-hover sortable">
+ 
+ <thead class="thead-dark">
+  <tr >
+    <th>Id</th>
+    <th> Title </th>
+    <th> Year </th>
+    <th> Author </th>
+</tr>
+
+
+<tr>
+<td>
+  <input type="number" name="bookid" ngModel #id=ngModel (keyup)="filterById(id.value)" > 
+
+</td>
+<td>
+  <input type="text" name="title" ngModel #title=ngModel (keyup)="filterByTitle(title.value)" >
+
+</td>
+<td>
+  <input type="number" name="year"  ngModel #year=ngModel (keyup)="filterByYear(year.value)" >
+
+</td>
+<td>
+  <input type="text" name="author"  ngModel #author=ngModel (keyup)="filterByAuthor(author.value)" >
+
+</td>
+</tr> 
+</thead>
+
+
+<tbody>
+<tr *ngFor="let book of books">
+ <td>{{book.id}}</td> 
+ <td>{{ book.title}}</td>
+ <td>{{ book.year}}</td>
+ <td>{{ book.author}}</td> 
+</tr>
+</tbody>
+</table>
+</div>
